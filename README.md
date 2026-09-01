@@ -6,13 +6,14 @@
 
 ## 🌟 About Me
 
-Recently, I am exploring **UX&AX** ~~clawdbot~~ ~~LangGraph~~.
+Recently, I am exploring **nyaasu (an agentic FSM harness for prod use)** ~~UX&AX~~ ~~clawdbot~~ ~~LangGraph~~.
 
 I enjoy creating **small tools and automation scripts** to improve productivity.  
 
 ~~I have some hardworking, intelligent employees… GPT, Claude, Kimi… and myself.~~  
 
-I only use Anthropic's latest and strongest model personally.
+~~I only use Anthropic's latest and strongest model personally.~~ I use opus 4.6 and Anthropic's latest and strongest model.
+
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
