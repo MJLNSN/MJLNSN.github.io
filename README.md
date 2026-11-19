@@ -6,7 +6,7 @@
 
 ## 🌟 About Me
 
-Recently, I am exploring **nyaasu (an agentic FSM harness for prod use)** ~~UX&AX~~ ~~clawdbot~~ ~~LangGraph~~.
+Recently, I am exploring **Embodied AI** ~~nyaasu (an agentic FSM harness for prod use)~~ ~~UX&AX~~ ~~clawdbot~~ ~~LangGraph~~.
 
 I enjoy creating **small tools and automation scripts** to improve productivity.  
 
