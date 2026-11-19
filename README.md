@@ -1,60 +1,79 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=36&duration=3000&pause=1000&color=2F81F7&center=true&vCenter=true&width=700&lines=📧+mjlnsn@gmail.com;💻+AI%2FML;Fullstack+Developer)](https://git.io/typing-svg)
+<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" width="100">
+
+# ⚡ MJLNSN
+
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Quicksand&weight=700&size=28&duration=3000&pause=1000&color=FFB5C2&center=true&vCenter=true&width=600&lines=Full+Stack+Developer+⚡;AI+%26+Robotics+Enthusiast+🤖;Building+Things+That+Matter+✨)](https://git.io/typing-svg)
+
+
 
 </div>
 
-## 🌟 About Me
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
-Recently, I am exploring **Embodied AI** ~~nyaasu (an agentic FSM harness for prod use)~~ ~~UX&AX~~ ~~clawdbot~~ ~~LangGraph~~.
+## 🌸 About Me
 
-I enjoy creating **small tools and automation scripts** to improve productivity.  
+A **Full Stack Developer** fascinated by **AI** and **Robotics**. I believe **system thinking** and **problem-solving** matter more than syntax.
 
-~~I have some hardworking, intelligent employees… GPT, Claude, Kimi… and myself.~~  
+I code in almost any language — powered by **Anthropic**'s latest models and **Claude Opus 4.6**.
 
-~~I only use Anthropic's latest and strongest model personally.~~ I use opus 4.6 and Anthropic's latest and strongest model.
-
+Recently exploring **Embodied AI** and building tools that make the world smarter.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## 🛠️ Tech Stack
 
+### 🧠 AI / ML
 <p align="center">
-  <img src="https://img.shields.io/badge/RESTful_API-02569B?style=for-the-badge&logo=api&logoColor=white"/>
-  <img src="https://img.shields.io/badge/LangGraph-1E1E1E?style=for-the-badge&logo=graph&logoColor=white"/>
-  <img src="https://img.shields.io/badge/LangChain-5A20CB?style=for-the-badge&logo=langchain&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white"/>
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring&logoColor=white"/>
-  <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyTorch-FFB5C2?style=for-the-badge&logo=pytorch&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/OpenCV-B5EAD7?style=for-the-badge&logo=opencv&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/LangChain-D4A5E5?style=for-the-badge&logo=chainlink&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/LangGraph-A8D8EA?style=for-the-badge&logo=graph&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/ROS-FFEAA7?style=for-the-badge&logo=ros&logoColor=5D5D7E"/>
 </p>
 
+### 💻 Web
 <p align="center">
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white"/>
-  <img src="https://img.shields.io/badge/OpenCV-23A0F0?style=for-the-badge&logo=opencv&logoColor=white"/>
-  <img src="https://img.shields.io/badge/ROS-FF6600?style=for-the-badge&logo=ros&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
-  <img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Linux-F0F6FC?style=for-the-badge&logo=linux&logoColor=000000"/>
-  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=232F3E"/>
+  <img src="https://img.shields.io/badge/React-A8D8EA?style=for-the-badge&logo=react&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/Node.js-B5EAD7?style=for-the-badge&logo=node.js&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/NestJS-FFB5C2?style=for-the-badge&logo=nestjs&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/FastAPI-D4A5E5?style=for-the-badge&logo=fastapi&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/Spring_Boot-B5EAD7?style=for-the-badge&logo=spring&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/.NET-A8D8EA?style=for-the-badge&logo=dotnet&logoColor=5D5D7E"/>
 </p>
 
-> Actually, I can **program in almost any programming language** elegantly, with the help of AI tools.  
-> Personally, I believe that product design, system thinking, and problem-solving matter more than syntax.
+### ⚙️ DevOps
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-A8D8EA?style=for-the-badge&logo=docker&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/Git-FFCCBC?style=for-the-badge&logo=git&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/GitHub_Actions-FFEAA7?style=for-the-badge&logo=github-actions&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/Linux-FFE0D0?style=for-the-badge&logo=linux&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-B5EAD7?style=for-the-badge&logo=postgresql&logoColor=5D5D7E"/>
+  <img src="https://img.shields.io/badge/AWS-FFEAA7?style=for-the-badge&logo=amazon-aws&logoColor=5D5D7E"/>
+</p>
+
+> ✨ I can **program in almost any language** elegantly, with the help of AI tools.
+> I believe product design, system thinking, and problem-solving matter more than syntax.
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## 📊 GitHub Stats
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MJLNSN&show_icons=true&include_all_commits=true&count_private=true&cache_seconds=1800)
+<div align="center">
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MJLNSN&layout=compact&langs_count=8&cache_seconds=1800)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=MJLNSN&show_icons=true&include_all_commits=true&count_private=true&bg_color=FFF8EE&title_color=FFB5C2&text_color=5D5D7E&icon_color=D4A5E5&border_color=FFD6DD&cache_seconds=1800)
 
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=MJLNSN&layout=compact&langs_count=8&bg_color=FFF8EE&title_color=FFB5C2&text_color=5D5D7E&border_color=FFD6DD&cache_seconds=1800)
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=MJLNSN&style=flat-square&color=blue"/>
-</p>
+</div>
+
+---
+
+<div align="center">
+
+<img src="https://komarev.com/ghpvc/?username=MJLNSN&style=flat-square&color=FFB5C2&label=Visitors"/>
+
+*Thanks for stopping by!* ⚡
+
+</div>

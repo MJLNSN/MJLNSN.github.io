@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MJL ⚡</title>
+    <title>MJLNSN ⚡</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,8 +53,11 @@
         .nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--pink);transition:width .3s}
         .nav-links a:hover::after{width:100%}
 
+        /* BG 3D Scene */
+        #bg-scene{position:fixed;inset:0;z-index:5;pointer-events:none}
+
         /* Hero */
-        .hero-scene{position:relative;width:100%;height:100vh;background:linear-gradient(180deg,#C9E8F3 0%,#D4E8F0 25%,#F0D6E0 60%,#FFD6DD 100%);overflow:hidden}
+        .hero-scene{position:relative;z-index:8;width:100%;height:100vh;background:linear-gradient(180deg,#C9E8F3 0%,#D4E8F0 25%,#F0D6E0 60%,#FFD6DD 100%);overflow:hidden}
         #three-canvas{position:absolute;inset:0;width:100%;height:100%}
 
         /* Intro Box */
@@ -69,7 +72,7 @@
         @keyframes arb{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
 
         /* Content */
-        .content-wrapper{position:relative;z-index:10;background:linear-gradient(180deg,var(--cream) 0%,#FFF5F5 50%,var(--cream) 100%)}
+        .content-wrapper{position:relative;z-index:10;background:none}
         .wave-transition{position:relative;z-index:7;margin-top:-60px}
         .wave-transition svg{display:block;width:100%}
         section{max-width:1000px;margin:0 auto;padding:30px 20px 50px}
@@ -84,6 +87,7 @@
 
         .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
         .reveal.active{opacity:1;transform:translateY(0)}
+        #about,#tech,#stats{background:rgba(255,248,238,0.6);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:24px;border:1px solid rgba(255,255,255,0.4);box-shadow:0 8px 32px rgba(255,181,194,0.1)}
 
         /* Trainer Card */
         .tc-wrap{display:flex;justify-content:center;perspective:800px}
@@ -107,7 +111,10 @@
         .tc-sb.s4{background:linear-gradient(90deg,var(--mint),var(--blue))}
         .tc-team{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
         .tc-team img{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.6);padding:3px;transition:transform .3s,box-shadow .3s;object-fit:contain}
-        .tc-team img:hover{transform:scale(1.3) translateY(-4px);box-shadow:0 6px 16px rgba(255,181,194,.4)}
+        .tc-team img:hover{transform:scale(1.3) translateY(-4px);box-shadow:0 6px 16px rgba(255,181,194,.4);cursor:pointer}
+        .tc-av img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+        .fw-p{position:absolute;border-radius:50%;pointer-events:none;animation:fwp .9s ease-out forwards}
+        @keyframes fwp{0%{transform:translate(0,0) scale(1);opacity:1}60%{opacity:.8}100%{transform:translate(var(--fx),var(--fy)) scale(0);opacity:0}}
 
         /* Tech Stack */
         .ts-section{display:flex;flex-direction:column;gap:35px}
@@ -118,6 +125,7 @@
         .bi{display:flex;flex-direction:column;align-items:center;gap:6px;padding:14px 16px;min-width:85px;background:var(--card-bg);backdrop-filter:blur(8px);border:1.5px solid var(--card-border);border-radius:16px;transition:all .35s}
         .bi:hover{transform:translateY(-6px) scale(1.05);box-shadow:0 10px 25px rgba(255,181,194,.2);border-color:var(--pink);background:rgba(255,255,255,.75)}
         .bi .icon{font-size:24px;position:relative;overflow:hidden;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%}
+        .bi .icon img{width:34px;height:34px;object-fit:contain;image-rendering:pixelated}
         .bi .icon::after{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,.5),transparent);transform:rotate(45deg) translateX(-100%);transition:transform .5s}
         .bi:hover .icon::after{transform:rotate(45deg) translateX(100%)}
         .bi .nm{font-size:12px;color:var(--text-light);font-weight:700}
@@ -133,7 +141,7 @@
         .pdx-l{font-family:var(--fp);font-size:10px;color:rgba(0,0,0,.35);margin-bottom:8px;text-align:right}
 
         /* Footer */
-        footer{position:relative;z-index:10;text-align:center;padding:50px 20px 35px;background:linear-gradient(180deg,transparent,rgba(255,181,194,.1))}
+        footer{position:relative;z-index:10;text-align:center;padding:50px 20px 35px;background:rgba(255,248,238,0.55);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:24px 24px 0 0;border:1px solid rgba(255,255,255,0.35);border-bottom:none}
         .footer-pk{width:100px;margin-bottom:15px;animation:fpb 2.5s ease-in-out infinite;filter:drop-shadow(0 4px 10px rgba(0,0,0,.12))}
         @keyframes fpb{0%,100%{transform:translateY(0)}25%{transform:translateY(-10px)}50%{transform:translateY(-3px)}75%{transform:translateY(-7px)}}
         .footer-h{font-family:var(--fp);font-size:clamp(12px,2vw,18px);color:var(--pink);margin-bottom:18px}
@@ -168,9 +176,10 @@
 </div>
 
 <canvas id="petals"></canvas>
+<canvas id="bg-scene"></canvas>
 
 <nav id="main-nav">
-    <div class="nav-logo">⚡ MJL</div>
+    <div class="nav-logo">⚡ MJLNSN</div>
     <ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#tech">Stack</a></li><li><a href="#stats">Stats</a></li></ul>
 </nav>
 
@@ -188,22 +197,22 @@
 
 <div class="wave-transition">
     <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120 Z" fill="var(--cream)"/>
+        <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,70 L1440,120 L0,120 Z" fill="rgba(255,248,238,0.4)"/>
     </svg>
 </div>
 
 <div class="content-wrapper">
     <section id="about">
-        <h2 class="section-title reveal">✨ Trainer Profile</h2>
+        <h2 class="section-title reveal">✨ Who Am I</h2>
         <div class="tc-wrap reveal" style="transition-delay:.15s">
             <div class="tc" id="tilt-card">
                 <div class="tc-hdr">
-                    <div class="tc-av">⚡</div>
-                    <div><div class="tc-name">MJL</div><span class="tc-badge">AI TRAINER · FULLSTACK</span></div>
+                    <div class="tc-av"><img src="image.png" alt="MJLNSN"></div>
+                    <div><div class="tc-name">MJLNSN</div><span class="tc-badge">FULLSTACK DEVELOPER</span></div>
                 </div>
                 <div class="tc-desc">
-                    Exploring <strong>Embodied AI</strong> and building tools to make the world smarter. I believe <strong>system thinking</strong> and <strong>problem-solving</strong> matter more than syntax.<br><br>
-                    I code in almost any language — with help from my partners. Currently running with <strong>Opus 4.6</strong>. 🤖
+                    A <strong>Full Stack Developer</strong> fascinated by <strong>AI</strong> and <strong>Robotics</strong>. I believe <strong>system thinking</strong> and <strong>problem-solving</strong> matter more than syntax.<br><br>
+                    I code in almost any language — powered by <strong>Anthropic</strong>'s latest models, currently running <strong>Claude Opus 4.6</strong>. 🤖
                 </div>
                 <div class="tc-stats">
                     <div><div class="tc-sl">🧠 AI / ML</div><div class="tc-sbg"><div class="tc-sb s1" data-w="92%"></div></div></div>
@@ -211,13 +220,10 @@
                     <div><div class="tc-sl">⚡ Speed</div><div class="tc-sbg"><div class="tc-sb s3" data-w="95%"></div></div></div>
                     <div><div class="tc-sl">🎨 Design</div><div class="tc-sbg"><div class="tc-sb s4" data-w="75%"></div></div></div>
                 </div>
-                <div class="tc-team">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png" alt="" title="Pikachu">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="" title="Charizard">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png" alt="" title="Meowth">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/906.png" alt="" title="Sprigatito">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png" alt="" title="Gengar">
-                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/149.png" alt="" title="Dragonite">
+                <div class="tc-team" id="tc-team">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png" alt="" title="Charizard" data-name="Charizard">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/906.png" alt="" title="Sprigatito" data-name="Sprigatito">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/52.png" alt="" title="Meowth" data-name="Meowth">
                 </div>
             </div>
         </div>
@@ -231,33 +237,33 @@
             <div class="reveal" style="transition-delay:.1s">
                 <div class="gym-hdr"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png" alt=""><span>AI / ML</span></div>
                 <div class="badge-row">
-                    <div class="bi"><div class="icon">🔥</div><div class="nm">PyTorch</div></div>
-                    <div class="bi"><div class="icon">👁️</div><div class="nm">OpenCV</div></div>
-                    <div class="bi"><div class="icon">🦜</div><div class="nm">LangChain</div></div>
-                    <div class="bi"><div class="icon">🕸️</div><div class="nm">LangGraph</div></div>
-                    <div class="bi"><div class="icon">🤖</div><div class="nm">ROS</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png" alt=""></div><div class="nm">PyTorch</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/201.png" alt=""></div><div class="nm">OpenCV</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/707.png" alt=""></div><div class="nm">LangChain</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png" alt=""></div><div class="nm">LangGraph</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/479.png" alt=""></div><div class="nm">ROS</div></div>
                 </div>
             </div>
             <div class="reveal" style="transition-delay:.2s">
                 <div class="gym-hdr"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/137.png" alt=""><span>WEB</span></div>
                 <div class="badge-row">
-                    <div class="bi"><div class="icon">⚛️</div><div class="nm">React</div></div>
-                    <div class="bi"><div class="icon">🟢</div><div class="nm">Node.js</div></div>
-                    <div class="bi"><div class="icon">🐱</div><div class="nm">NestJS</div></div>
-                    <div class="bi"><div class="icon">⚡</div><div class="nm">FastAPI</div></div>
-                    <div class="bi"><div class="icon">🍃</div><div class="nm">Spring</div></div>
-                    <div class="bi"><div class="icon">🔷</div><div class="nm">.NET</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/121.png" alt=""></div><div class="nm">React</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt=""></div><div class="nm">Node.js</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/16.png" alt=""></div><div class="nm">NestJS</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/135.png" alt=""></div><div class="nm">FastAPI</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/152.png" alt=""></div><div class="nm">Spring</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/474.png" alt=""></div><div class="nm">.NET</div></div>
                 </div>
             </div>
             <div class="reveal" style="transition-delay:.3s">
                 <div class="gym-hdr"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/479.png" alt=""><span>DEVOPS</span></div>
                 <div class="badge-row">
-                    <div class="bi"><div class="icon">🐳</div><div class="nm">Docker</div></div>
-                    <div class="bi"><div class="icon">🔀</div><div class="nm">Git</div></div>
-                    <div class="bi"><div class="icon">🤸</div><div class="nm">Actions</div></div>
-                    <div class="bi"><div class="icon">🐧</div><div class="nm">Linux</div></div>
-                    <div class="bi"><div class="icon">🐘</div><div class="nm">PostgreSQL</div></div>
-                    <div class="bi"><div class="icon">☁️</div><div class="nm">AWS</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" alt=""></div><div class="nm">Docker</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" alt=""></div><div class="nm">Git</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/68.png" alt=""></div><div class="nm">GitHub Actions</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/393.png" alt=""></div><div class="nm">Linux</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/231.png" alt=""></div><div class="nm">PostgreSQL</div></div>
+                    <div class="bi"><div class="icon"><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/81.png" alt=""></div><div class="nm">AWS</div></div>
                 </div>
             </div>
         </div>
@@ -266,7 +272,7 @@
     <div class="poke-divider"><div class="line"></div><div class="ball"></div><div class="line"></div></div>
 
     <section id="stats">
-        <h2 class="section-title reveal">📱 Pokédex</h2>
+        <!-- GitHub Stats -->
         <div class="pdx-area">
             <div class="pdx-f reveal" style="transition-delay:.15s"><div class="pdx-s"><div class="pdx-l">#MJLNSN</div><img src="https://github-readme-stats.vercel.app/api?username=MJLNSN&show_icons=true&include_all_commits=true&count_private=true&theme=default&hide_border=true&bg_color=f0f5f0&title_color=5D5D7E&text_color=5D5D7E&icon_color=FFB5C2" alt="GitHub Stats" loading="lazy"></div></div>
             <div class="pdx-f reveal" style="transition-delay:.3s"><div class="pdx-s"><div class="pdx-l">TYPE ANALYSIS</div><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=MJLNSN&layout=compact&langs_count=8&theme=default&hide_border=true&bg_color=f0f5f0&title_color=5D5D7E&text_color=5D5D7E" alt="Top Languages" loading="lazy"></div></div>
@@ -404,24 +410,25 @@ for(let i=0;i<4;i++){
     ring.add(spoke);
 }
 
-const cColors = [0xC9E8F3, 0xFFD6DD, 0xFFF3CD, 0xD4F5E9, 0xE8CEF5, 0xFFCCBC, 0xC9E8F3, 0xFFD6DD];
+const cColors = [0xFFB5C2, 0xA8D8EA, 0xFFEAA7, 0xB5EAD7, 0xD4A5E5, 0xFFCCBC, 0xC9E8F3, 0xFFD6DD];
 const fwCabins = [];
 for(let i=0;i<8;i++){
     const a=(i/8)*Math.PI*2;
     const cab = new THREE.Group();
-    const box = new THREE.Mesh(
-        new THREE.BoxGeometry(0.55, 0.45, 0.4),
-        new THREE.MeshPhongMaterial({ color: cColors[i], shininess: 40 })
+    const cabBody = new THREE.Mesh(
+        new THREE.CylinderGeometry(0.25, 0.25, 0.5, 16),
+        new THREE.MeshPhongMaterial({ color: cColors[i], shininess: 60 })
     );
-    box.castShadow = true;
-    cab.add(box);
-    cab.add(Object.assign(new THREE.Mesh(
-        new THREE.CylinderGeometry(0.012, 0.012, 0.4, 4),
-        new THREE.MeshPhongMaterial({ color: 0x999999 })
-    ), { position: new THREE.Vector3(0, 0.42, 0) }));
+    cabBody.castShadow = true; cab.add(cabBody);
+    const roof = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.28, 0.08, 16), new THREE.MeshPhongMaterial({ color: cColors[i] }));
+    roof.position.y = 0.29; cab.add(roof);
+    const winGeo = new THREE.RingGeometry(0.06, 0.11, 16);
+    const winMat = new THREE.MeshPhongMaterial({ color: 0x88C8E8, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
+    const win = new THREE.Mesh(winGeo, winMat);
+    win.position.set(0, 0.06, 0.26); cab.add(win);
     const lt = new THREE.Mesh(
-        new THREE.SphereGeometry(0.07, 8, 8),
-        new THREE.MeshPhongMaterial({ color: 0xFFEAA7, emissive: 0xFFEAA7, emissiveIntensity: 0.6 })
+        new THREE.SphereGeometry(0.05, 8, 8),
+        new THREE.MeshPhongMaterial({ color: cColors[i], emissive: cColors[i], emissiveIntensity: 0.5 })
     );
     lt.position.y = -0.3; cab.add(lt);
     cab.position.set(Math.cos(a)*3.8, Math.sin(a)*3.8, 0);
@@ -437,16 +444,20 @@ ring.add(new THREE.Mesh(
 fwGroup.add(ring);
 
 const legMat = new THREE.MeshPhongMaterial({ color: 0xFFCCBC });
-const mkLeg = (x, rz) => {
-    const l = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.11, 6, 8), legMat);
-    l.position.set(x, -3, 0); l.rotation.z = rz; l.castShadow = true;
-    return l;
-};
-fwGroup.add(mkLeg(-1.1, 0.18)); fwGroup.add(mkLeg(1.1, -0.18));
-const brace = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 2.8, 6), legMat);
-brace.position.set(0, -3.5, 0); brace.rotation.z = Math.PI/2; fwGroup.add(brace);
-const base = new THREE.Mesh(new THREE.BoxGeometry(4, 0.2, 1), legMat);
-base.position.y = -6; base.receiveShadow = true; fwGroup.add(base);
+const legAngle = Math.atan(0.75 / 3);
+const legH = Math.sqrt(0.75*0.75 + 3*3) * 2;
+const leftLeg = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.12, legH, 8), legMat);
+leftLeg.position.set(-0.75, -3, 0); leftLeg.rotation.z = -legAngle; leftLeg.castShadow = true;
+fwGroup.add(leftLeg);
+const rightLeg = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.12, legH, 8), legMat);
+rightLeg.position.set(0.75, -3, 0); rightLeg.rotation.z = legAngle; rightLeg.castShadow = true;
+fwGroup.add(rightLeg);
+const axle = new THREE.Mesh(new THREE.CylinderGeometry(0.1, 0.1, 0.7, 8), legMat);
+axle.rotation.x = Math.PI/2; fwGroup.add(axle);
+const brace = new THREE.Mesh(new THREE.CylinderGeometry(0.05, 0.05, 1.5, 6), legMat);
+brace.position.set(0, -4, 0); brace.rotation.z = Math.PI/2; fwGroup.add(brace);
+const base = new THREE.Mesh(new THREE.BoxGeometry(3.6, 0.2, 1), legMat);
+base.position.y = -6.1; base.receiveShadow = true; fwGroup.add(base);
 
 fwGroup.position.set(-7.5, 7, -3);
 scene.add(fwGroup);
@@ -488,24 +499,24 @@ const platform = new THREE.Mesh(
 );
 platform.position.y = 0.1; platform.receiveShadow = true; cGroup.add(platform);
 
-const horseGroup = new THREE.Group();
-horseGroup.position.y = 0.2;
-const hColors = [0xFFB5C2, 0xA8D8EA, 0xFFEAA7, 0xB5EAD7, 0xD4A5E5, 0xFFCCBC];
-const horses = [];
+const swingGroup = new THREE.Group();
+swingGroup.position.y = 0.2;
+const swColors = [0xFFB5C2, 0xA8D8EA, 0xFFEAA7, 0xB5EAD7, 0xD4A5E5, 0xFFCCBC];
+const swings = [];
 for(let i=0;i<6;i++){
     const a=(i/6)*Math.PI*2;
-    const hg = new THREE.Group();
-    const pole = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.035, 3, 6), new THREE.MeshPhongMaterial({ color: 0xD4A574 }));
-    pole.position.y = 1.5; hg.add(pole);
-    const body = new THREE.Mesh(new THREE.SphereGeometry(0.32, 12, 10), new THREE.MeshPhongMaterial({ color: hColors[i], shininess: 50 }));
-    body.scale.set(1, 0.8, 1.5); body.position.y = 0.9; body.castShadow = true; hg.add(body);
-    const head = new THREE.Mesh(new THREE.SphereGeometry(0.17, 8, 8), new THREE.MeshPhongMaterial({ color: hColors[i], shininess: 50 }));
-    head.position.set(0, 1.2, 0.4); hg.add(head);
-    hg.position.set(Math.cos(a)*1.6, 0, Math.sin(a)*1.6);
-    horseGroup.add(hg);
-    horses.push({ g: hg, phase: i*1.047 });
+    const sg = new THREE.Group();
+    const chain = new THREE.Mesh(new THREE.CylinderGeometry(0.015, 0.015, 2.4, 4), new THREE.MeshPhongMaterial({ color: 0xBBBBBB, shininess: 80 }));
+    chain.position.y = 1.8; sg.add(chain);
+    const ball = new THREE.Mesh(new THREE.SphereGeometry(0.28, 16, 16), new THREE.MeshPhongMaterial({ color: swColors[i], shininess: 90 }));
+    ball.position.y = 0.45; ball.castShadow = true; sg.add(ball);
+    const highlight = new THREE.Mesh(new THREE.SphereGeometry(0.08, 8, 8), new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0.6 }));
+    highlight.position.set(0.1, 0.55, 0.18); sg.add(highlight);
+    sg.position.set(Math.cos(a)*1.6, 0, Math.sin(a)*1.6);
+    swingGroup.add(sg);
+    swings.push({ g: sg, phase: i*1.047 });
 }
-cGroup.add(horseGroup);
+cGroup.add(swingGroup);
 
 for(let i=0;i<16;i++){
     const a=(i/16)*Math.PI*2;
@@ -554,7 +565,8 @@ function mkCloud(pos, sc){
     const g = new THREE.Group();
     const m = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0.85 });
     [[0,0,0,1],[.9,.2,.1,.8],[-.7,.15,-.1,.7],[.35,.35,.2,.6],[-.35,.1,-.25,.55]].forEach(([x,y,z,r])=>{
-        g.add(Object.assign(new THREE.Mesh(new THREE.SphereGeometry(r, 10, 10), m), { position: new THREE.Vector3(x,y,z) }));
+        const puff = new THREE.Mesh(new THREE.SphereGeometry(r, 10, 10), m);
+        puff.position.set(x, y, z); g.add(puff);
     });
     g.scale.setScalar(sc); g.position.set(...pos);
     scene.add(g); return g;
@@ -578,7 +590,7 @@ const pkBase = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites
 const pkSprites = [
     mkPkmn(pkBase+'25.png',  4.5, [2.5, 2.8, 5]),
     mkPkmn(pkBase+'52.png',  4.0, [-4, 2.5, 4.5]),
-    mkPkmn(pkBase+'6.png',   5.0, [10, 11, -5]),
+    mkPkmn(pkBase+'6.png',   5.0, [9, 7, -3]),
     mkPkmn(pkBase+'906.png', 2.8, [-1, 1.8, 7]),
     mkPkmn(pkBase+'133.png', 2.8, [-9, 2, 3]),
     mkPkmn(pkBase+'39.png',  2.2, [4, 9, -2])
@@ -608,8 +620,13 @@ function animate(){
     ring.rotation.z = t * 0.12;
     fwCabins.forEach(c => { c.rotation.z = -t * 0.12; });
 
-    horseGroup.rotation.y = t * 0.45;
-    horses.forEach(h => { h.g.position.y = 0.3 + Math.sin(t*2 + h.phase) * 0.35; });
+    swingGroup.rotation.y = t * 0.45;
+    swings.forEach((s,i) => {
+        s.g.position.y = 0.3 + Math.sin(t*1.5 + s.phase) * 0.25;
+        const swingAngle = Math.sin(t*1.8 + s.phase) * 0.25;
+        s.g.rotation.x = swingAngle * Math.cos((i/6)*Math.PI*2);
+        s.g.rotation.z = swingAngle * Math.sin((i/6)*Math.PI*2);
+    });
 
     balloons.forEach((b,i) => {
         b.position.y = b.userData.baseY + Math.sin(t*.4 + i*2.1) * 0.6;
@@ -631,7 +648,7 @@ function animate(){
 animate();
 
 /* === TYPING === */
-const lines = ["Hi there! I'm MJL! ⚡", "I'm an AI Trainer and Fullstack Developer!", "Currently on a quest to master Embodied AI...", "My dream? Build things that make the world smarter! ✨"];
+const lines = ["Hi there! I'm MJLNSN! ⚡", "I'm a Full Stack Developer!", "Fascinated by AI and Robotics...", "My dream? Build things that make the world smarter and my life easier! ✨"];
 const introEl = document.getElementById('intro-text'), arrowEl = document.getElementById('intro-arrow');
 let li=0, ci=0;
 function typeI(){
@@ -640,7 +657,7 @@ function typeI(){
         let o=''; for(let i=0;i<li;i++) o+=lines[i]+'<br>';
         o+=lines[li].substring(0,ci);
         introEl.innerHTML=o+'<span class="intro-cursor"></span>';
-        ci++; setTimeout(typeI, 45+Math.random()*35);
+        ci++; setTimeout(typeI, 22+Math.random()*18);
     } else { li++; ci=0; setTimeout(typeI,500); }
 }
 setTimeout(typeI, 2200);
@@ -670,6 +687,306 @@ addEventListener('click',e=>{
     b.innerHTML='<div class="ring"></div>';
     for(let i=0;i<8;i++){const a=(i/8)*Math.PI*2,d=25+Math.random()*25;b.innerHTML+=`<div class="dot" style="--tx:${Math.cos(a)*d}px;--ty:${Math.sin(a)*d}px;background:${bCols[i%5]};left:0;top:0"></div>`;}
     document.body.appendChild(b);setTimeout(()=>b.remove(),600);
+});
+
+/* ============================================= */
+/* ===     BACKGROUND PARK 3D SCENE          === */
+/* ============================================= */
+const bgCanvas = document.getElementById('bg-scene');
+const bgScene2 = new THREE.Scene();
+bgScene2.fog = new THREE.FogExp2(0xF5EEE6, 0.014);
+
+const bgCam = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 200);
+bgCam.position.set(0, 10, 16);
+bgCam.lookAt(0, 0, 0);
+
+const bgR = new THREE.WebGLRenderer({ canvas: bgCanvas, alpha: true, antialias: true });
+bgR.setSize(innerWidth, innerHeight);
+bgR.setPixelRatio(Math.min(devicePixelRatio, 1.5));
+
+addEventListener('resize', () => {
+    bgCam.aspect = innerWidth/innerHeight;
+    bgCam.updateProjectionMatrix();
+    bgR.setSize(innerWidth, innerHeight);
+});
+
+bgScene2.add(new THREE.AmbientLight(0xFFE8F0, 0.65));
+const bgSun = new THREE.DirectionalLight(0xFFFAF0, 0.75);
+bgSun.position.set(8, 15, 10); bgScene2.add(bgSun);
+const bgPink = new THREE.PointLight(0xFFB5C2, 0.2, 30);
+bgPink.position.set(-5, 5, 5); bgScene2.add(bgPink);
+
+/* BG Ground */
+const bgGeo = new THREE.PlaneGeometry(60, 60, 50, 50);
+const bgGP = bgGeo.attributes.position;
+for(let i=0;i<bgGP.count;i++){
+    const x=bgGP.getX(i), y=bgGP.getY(i);
+    bgGP.setZ(i, Math.sin(x*0.12)*Math.cos(y*0.15)*1.2 + Math.cos(x*0.2+y*0.1)*0.4);
+}
+bgGeo.computeVertexNormals();
+const bgGround = new THREE.Mesh(bgGeo, new THREE.MeshPhongMaterial({ color: 0xA8E6CF, shininess: 8 }));
+bgGround.rotation.x = -Math.PI/2; bgGround.position.y = -1;
+bgScene2.add(bgGround);
+
+/* BG Path */
+const pathMesh = new THREE.Mesh(
+    new THREE.PlaneGeometry(1.2, 35),
+    new THREE.MeshPhongMaterial({ color: 0xF5DEB3, shininess: 5 })
+);
+pathMesh.rotation.x = -Math.PI/2; pathMesh.position.set(0, -0.48, 0);
+bgScene2.add(pathMesh);
+
+/* Cherry Blossom Trees — detailed rendering */
+function mkBgTree(x, z, sc){
+    const g = new THREE.Group();
+    const bark = new THREE.MeshPhongMaterial({ color: 0x5C3D2E, shininess: 8 });
+    const darkBark = new THREE.MeshPhongMaterial({ color: 0x4A3222, shininess: 8 });
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.1*sc, 0.22*sc, 2.4*sc, 8), bark);
+    trunk.position.y = 1.2*sc; g.add(trunk);
+    const trunk2 = new THREE.Mesh(new THREE.CylinderGeometry(0.06*sc, 0.1*sc, 0.8*sc, 6), bark);
+    trunk2.position.set(0.04*sc, 2.6*sc, 0); trunk2.rotation.z = -0.12; g.add(trunk2);
+
+    const brData = [
+        {p:[.15,2.0,0],r:[0,0,-.65],l:1.4,rt:.035,rb:.07},
+        {p:[-.1,2.3,.1],r:[.2,0,.5],l:1.2,rt:.03,rb:.06},
+        {p:[.05,1.7,-.15],r:[-.35,.2,-.35],l:1.3,rt:.03,rb:.06},
+        {p:[-.12,2.5,-.05],r:[-.1,0,.55],l:1.0,rt:.025,rb:.05},
+        {p:[.1,1.5,.2],r:[.4,0,-.75],l:1.1,rt:.025,rb:.05},
+    ];
+    brData.forEach(b=>{
+        const br = new THREE.Mesh(new THREE.CylinderGeometry(b.rt*sc, b.rb*sc, b.l*sc, 6), darkBark);
+        br.position.set(b.p[0]*sc, b.p[1]*sc, b.p[2]*sc);
+        br.rotation.set(b.r[0], b.r[1], b.r[2]);
+        g.add(br);
+    });
+
+    const blMats = [
+        new THREE.MeshPhongMaterial({color:0xFFB5C2,emissive:0xFFB5C2,emissiveIntensity:.08}),
+        new THREE.MeshPhongMaterial({color:0xFFC8D4,emissive:0xFFC8D4,emissiveIntensity:.06}),
+        new THREE.MeshPhongMaterial({color:0xFFDDE5,emissive:0xFFDDE5,emissiveIntensity:.05}),
+        new THREE.MeshPhongMaterial({color:0xFFEEF2}),
+        new THREE.MeshPhongMaterial({color:0xFFF5F8}),
+    ];
+    for(let i=0;i<40;i++){
+        const th=Math.random()*Math.PI*2, ph=Math.random()*Math.PI*.65;
+        const r=.6+Math.random()*.9;
+        const bx=Math.cos(th)*Math.sin(ph)*r;
+        const by=2.6+Math.cos(ph)*r*.45+Math.random()*.4;
+        const bz=Math.sin(th)*Math.sin(ph)*r;
+        const sz=(.07+Math.random()*.1)*sc;
+        const bl=new THREE.Mesh(new THREE.SphereGeometry(sz,6,6),blMats[Math.random()*5|0]);
+        bl.position.set(bx*sc,by*sc,bz*sc); g.add(bl);
+    }
+    for(let i=0;i<20;i++){
+        const th=Math.random()*Math.PI*2, ph=Math.random()*Math.PI*.55;
+        const r=1.0+Math.random()*.4;
+        const bx=Math.cos(th)*Math.sin(ph)*r;
+        const by=2.4+Math.cos(ph)*r*.35+Math.random()*.5;
+        const bz=Math.sin(th)*Math.sin(ph)*r;
+        const sz=(.03+Math.random()*.05)*sc;
+        const bl=new THREE.Mesh(new THREE.SphereGeometry(sz,4,4),blMats[Math.random()*5|0]);
+        bl.position.set(bx*sc,by*sc,bz*sc); g.add(bl);
+    }
+    g.position.set(x, -1, z);
+    bgScene2.add(g); return g;
+}
+const bgTrees = [mkBgTree(-8,-5,1.2), mkBgTree(7,-8,1.0), mkBgTree(-6,5,0.9), mkBgTree(10,3,1.1), mkBgTree(-3,-12,0.8)];
+
+/* Seesaw */
+const ssGroup = new THREE.Group();
+const ssBase = new THREE.Mesh(new THREE.ConeGeometry(0.35, 0.5, 3), new THREE.MeshPhongMaterial({ color: 0xD4A574 }));
+ssBase.position.y = 0.25; ssGroup.add(ssBase);
+const ssPlank = new THREE.Mesh(new THREE.BoxGeometry(3, 0.1, 0.35), new THREE.MeshPhongMaterial({ color: 0xFFCCBC, shininess: 30 }));
+ssPlank.position.y = 0.55; ssGroup.add(ssPlank);
+ssGroup.position.set(-5, -1, 2);
+bgScene2.add(ssGroup);
+
+/* Park Bench */
+const benchG = new THREE.Group();
+const woodM = new THREE.MeshPhongMaterial({ color: 0xD4A574, shininess: 15 });
+const benchSeat = new THREE.Mesh(new THREE.BoxGeometry(2, 0.08, 0.5), woodM);
+benchSeat.position.y = 0.6; benchG.add(benchSeat);
+const benchBack = new THREE.Mesh(new THREE.BoxGeometry(2, 0.5, 0.06), woodM);
+benchBack.position.set(0, 0.95, -0.22); benchG.add(benchBack);
+const ironM = new THREE.MeshPhongMaterial({ color: 0x888888 });
+[-0.8, 0.8].forEach(lx=>{
+    const leg = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.6, 0.5), ironM);
+    leg.position.set(lx, 0.3, 0); benchG.add(leg);
+});
+benchG.position.set(5, -1, -3);
+bgScene2.add(benchG);
+
+/* Slide */
+const sldGroup = new THREE.Group();
+const sldSurf = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.05, 3), new THREE.MeshPhongMaterial({ color: 0xFFEAA7, shininess: 60 }));
+sldSurf.position.set(0, 1.2, 0); sldSurf.rotation.x = 0.35; sldGroup.add(sldSurf);
+[-0.38, 0.38].forEach(rx=>{
+    const rail = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.15, 3), new THREE.MeshPhongMaterial({ color: 0xFFB5C2 }));
+    rail.position.set(rx, 1.28, 0); rail.rotation.x = 0.35; sldGroup.add(rail);
+});
+const sldPlat = new THREE.Mesh(new THREE.BoxGeometry(0.8, 0.06, 0.5), new THREE.MeshPhongMaterial({ color: 0xA8D8EA }));
+sldPlat.position.set(0, 2.1, -1.4); sldGroup.add(sldPlat);
+sldGroup.position.set(-3, -1, -6);
+bgScene2.add(sldGroup);
+
+/* Pond + Magikarp */
+const pondG = new THREE.Group();
+const water = new THREE.Mesh(
+    new THREE.CircleGeometry(2.5, 32),
+    new THREE.MeshPhongMaterial({ color: 0x88C8E8, transparent: true, opacity: 0.6, shininess: 100 })
+);
+water.rotation.x = -Math.PI/2; water.position.y = 0.02; pondG.add(water);
+for(let i=0;i<20;i++){
+    const a=(i/20)*Math.PI*2;
+    const st = new THREE.Mesh(new THREE.SphereGeometry(0.15+Math.random()*0.1, 8, 8), new THREE.MeshPhongMaterial({ color: 0xA0A090 }));
+    st.scale.y = 0.5; st.position.set(Math.cos(a)*2.55, 0.05, Math.sin(a)*2.55); pondG.add(st);
+}
+pondG.position.set(7, -1, 6);
+bgScene2.add(pondG);
+
+const mkTex = texL.load(pkBase+'129.png');
+const magikarps = [];
+const mkData = [
+    {x:7, z:6, sc:1.8, spd:0.8, ph:0, h:3},
+    {x:5.5, z:7, sc:1.3, spd:1.0, ph:2.5, h:2.4},
+    {x:8.5, z:5, sc:1.1, spd:0.95, ph:4.2, h:2.0},
+    {x:10.5, z:7.5, sc:1.5, spd:0.7, ph:1.6, h:2.8},
+    {x:8.8, z:2.5, sc:1.0, spd:1.1, ph:3.6, h:2.1},
+];
+mkData.forEach(d=>{
+    const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: mkTex, transparent: true }));
+    sp.scale.set(d.sc, d.sc, 1); sp.position.set(d.x, -1.5, d.z);
+    sp.userData = {bx:d.x, bz:d.z, spd:d.spd, ph:d.ph, h:d.h};
+    bgScene2.add(sp); magikarps.push(sp);
+});
+
+/* Waterfall */
+const wfGroup = new THREE.Group();
+const cliff = new THREE.Mesh(new THREE.BoxGeometry(2, 2.5, 1), new THREE.MeshPhongMaterial({ color: 0x8E8E7E }));
+cliff.position.set(0, 0.5, 0); wfGroup.add(cliff);
+const wStream = new THREE.Mesh(new THREE.PlaneGeometry(0.8, 2.2), new THREE.MeshPhongMaterial({ color: 0xA8D8EA, transparent: true, opacity: 0.5, shininess: 100, side: THREE.DoubleSide }));
+wStream.position.set(0, 0.5, 0.52); wfGroup.add(wStream);
+for(let i=0;i<4;i++){
+    const mist = new THREE.Mesh(new THREE.SphereGeometry(0.25+Math.random()*0.25, 8, 8), new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0.2 }));
+    mist.position.set((Math.random()-.5)*.7, -.4+Math.random()*.3, .3+Math.random()*.3); wfGroup.add(mist);
+}
+wfGroup.position.set(10, -1, 8);
+bgScene2.add(wfGroup);
+
+/* Stream from pond */
+const streamMat = new THREE.MeshPhongMaterial({ color: 0x88C8E8, transparent: true, opacity: 0.45, shininess: 90 });
+const stream = new THREE.Mesh(new THREE.PlaneGeometry(0.6, 5), streamMat);
+stream.rotation.x = -Math.PI/2; stream.position.set(8.5, -0.46, 3);
+stream.rotation.z = 0.3;
+bgScene2.add(stream);
+
+/* BG Clouds */
+function mkBgCloud(pos, sc){
+    const g = new THREE.Group();
+    const m = new THREE.MeshPhongMaterial({ color: 0xffffff, transparent: true, opacity: 0.8 });
+    [[0,0,0,1],[.8,.2,.1,.7],[-.6,.15,-.1,.6],[.3,.3,.2,.5]].forEach(([x,y,z,r])=>{
+        const p = new THREE.Mesh(new THREE.SphereGeometry(r, 8, 8), m);
+        p.position.set(x, y, z); g.add(p);
+    });
+    g.scale.setScalar(sc); g.position.set(...pos);
+    bgScene2.add(g); return g;
+}
+const bgClouds = [mkBgCloud([-8,10,-8],1.5), mkBgCloud([10,12,-5],1.8), mkBgCloud([0,11,-12],1.3), mkBgCloud([-12,9,0],1.6)];
+
+/* BG Balloons */
+function mkBgBalloon(col, pos){
+    const g = new THREE.Group();
+    const b = new THREE.Mesh(new THREE.SphereGeometry(0.3, 12, 12), new THREE.MeshPhongMaterial({ color: col, shininess: 60 }));
+    b.scale.y = 1.3; b.position.y = 1; g.add(b);
+    const s = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 1.2, 4), new THREE.MeshPhongMaterial({ color: 0xAAAAAA }));
+    s.position.y = 0.3; g.add(s);
+    g.position.set(...pos); g.userData.baseY = pos[1];
+    bgScene2.add(g); return g;
+}
+const bgBalloons = [mkBgBalloon(0xFFB5C2,[-4,5,-2]), mkBgBalloon(0xA8D8EA,[3,6,-5]), mkBgBalloon(0xFFEAA7,[-7,4,4]), mkBgBalloon(0xD4A5E5,[8,5,-9])];
+
+/* Ground flowers */
+const flColors = [0xFFB5C2, 0xFFEAA7, 0xD4A5E5, 0xA8D8EA, 0xFFCCBC];
+for(let i=0;i<40;i++){
+    const f = new THREE.Mesh(new THREE.SphereGeometry(0.08, 6, 6), new THREE.MeshPhongMaterial({ color: flColors[i%5], emissive: flColors[i%5], emissiveIntensity: 0.15 }));
+    f.position.set((Math.random()-0.5)*30, -0.7+Math.random()*0.2, (Math.random()-0.5)*30);
+    f.scale.y = 0.5; bgScene2.add(f);
+}
+
+/* Stepping stones on path */
+for(let i=0;i<8;i++){
+    const s = new THREE.Mesh(new THREE.CylinderGeometry(0.15+Math.random()*0.08, 0.18, 0.06, 8), new THREE.MeshPhongMaterial({ color: 0xD5C4A1, shininess: 5 }));
+    s.position.set((Math.random()-.5)*.8, -0.47, -10+i*2.8+Math.random());
+    bgScene2.add(s);
+}
+
+/* BG Animate */
+const bgClock = new THREE.Clock();
+const heroH = heroEl.offsetHeight;
+function bgAnimate(){
+    requestAnimationFrame(bgAnimate);
+    if(scrollY < heroH * 0.4){ bgR.render(bgScene2, bgCam); return; }
+    const t = bgClock.getElapsedTime();
+    const maxS = document.documentElement.scrollHeight - innerHeight;
+    const sp = Math.min(scrollY / Math.max(maxS, 1), 1);
+
+    bgCam.position.x = Math.sin(sp * Math.PI * 0.8) * 5;
+    bgCam.position.z = 16 - sp * 7;
+    bgCam.position.y = 10 + Math.sin(t * 0.15) * 0.5;
+    bgCam.lookAt(bgCam.position.x * 0.3, 0, bgCam.position.z - 14);
+
+    ssPlank.rotation.z = Math.sin(t * 1.5) * 0.15;
+
+    magikarps.forEach(mk=>{
+        const u=mk.userData, jt=t*u.spd+u.ph, jh=Math.sin(jt);
+        if(jh>0){
+            mk.position.y = jh*u.h - 1;
+            mk.material.opacity = 1;
+            mk.material.rotation = jh*Math.PI*1.5*(u.ph>2?-1:1);
+        } else {
+            mk.position.y = -1.5;
+            mk.material.opacity = 0;
+            mk.material.rotation = 0;
+        }
+    });
+
+    bgClouds.forEach((c, i) => {
+        c.position.x += 0.004 * (i%2 ? 1 : -1);
+        if(c.position.x > 20) c.position.x = -20;
+        if(c.position.x < -20) c.position.x = 20;
+    });
+
+    bgBalloons.forEach((b, i) => { b.position.y = b.userData.baseY + Math.sin(t*0.5 + i*1.5) * 0.4; });
+
+    bgR.render(bgScene2, bgCam);
+}
+bgAnimate();
+
+/* === FIREWORKS ON TEAM POKÉMON CLICK === */
+function firework(el){
+    const r=el.getBoundingClientRect();
+    const cx=r.left+r.width/2, cy=r.top+r.height/2;
+    const fwCols=['#FFB5C2','#A8D8EA','#FFEAA7','#B5EAD7','#D4A5E5','#FF6B6B','#FFD93D','#6BCB77','#FF9FF3','#FFA07A'];
+    const container=document.createElement('div');
+    container.style.cssText='position:fixed;pointer-events:none;z-index:9999;left:0;top:0;width:100%;height:100%';
+    document.body.appendChild(container);
+    for(let burst=0;burst<3;burst++){
+        setTimeout(()=>{
+            const ox=cx+(burst-1)*15, oy=cy-burst*20;
+            for(let i=0;i<18;i++){
+                const p=document.createElement('div'); p.className='fw-p';
+                const ang=(i/18)*Math.PI*2+Math.random()*.3;
+                const dist=50+Math.random()*70;
+                const sz=3+Math.random()*6;
+                p.style.cssText=`left:${ox}px;top:${oy}px;width:${sz}px;height:${sz}px;background:${fwCols[i%fwCols.length]};box-shadow:0 0 ${sz*2}px ${fwCols[i%fwCols.length]};--fx:${Math.cos(ang)*dist}px;--fy:${Math.sin(ang)*dist-40}px`;
+                container.appendChild(p);
+            }
+        },burst*180);
+    }
+    setTimeout(()=>container.remove(),1600);
+}
+document.querySelectorAll('#tc-team img').forEach(img=>{
+    img.addEventListener('click',e=>{ e.stopPropagation(); firework(img); });
 });
 
 /* === ANCHORS === */
